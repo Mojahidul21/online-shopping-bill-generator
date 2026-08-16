@@ -1,0 +1,300 @@
+/* ============================================================
+   Online Shopping Bill Generator — Stylesheet
+   Theme: Black + White + Gold + Silver, dark & light modes
+   ============================================================ */
+
+/* ---------- Theme tokens ---------- */
+:root,
+[data-theme="dark"] {
+  --bg-color: #0d0d0d;
+  --surface-color: #161616;
+  --text-color: #f5f5f5;
+  --text-muted: #b3b3b3;
+  --accent-gold: #d4af37;
+  --accent-gold-dark: #a6841f;
+  --accent-silver: #c0c0c0;
+  --table-header-bg: #0d2b5e;
+  --table-header-text: #d4af37;
+  --row-bg: #121212;
+  --row-alt-bg: #1c1c1c;
+  --border-color: #d4af37;
+  --error-color: #ff6b6b;
+  --button-text: #0d0d0d;
+  --shadow-color: rgba(0, 0, 0, 0.5);
+}
+
+[data-theme="light"] {
+  --bg-color: #ffffff;
+  --surface-color: #fafafa;
+  --text-color: #1a1a1a;
+  --text-muted: #555555;
+  --accent-gold: #b8860b;
+  --accent-gold-dark: #8a660a;
+  --accent-silver: #8f8f8f;
+  --table-header-bg: #0d2b5e;
+  --table-header-text: #d4af37;
+  --row-bg: #ffffff;
+  --row-alt-bg: #f0f0f0;
+  --border-color: #b8860b;
+  --error-color: #c0392b;
+  --button-text: #0d0d0d;
+  --shadow-color: rgba(0, 0, 0, 0.12);
+}
+
+/* ---------- Base ---------- */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---------- Header ---------- */
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 32px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.site-title {
+  margin: 0;
+  font-size: clamp(1.3rem, 2.5vw, 2rem);
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: var(--accent-gold);
+  text-align: center;
+  flex: 1;
+}
+
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  background: transparent;
+  border: 1px solid var(--accent-gold);
+  color: var(--accent-gold);
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.theme-toggle:hover {
+  background-color: var(--accent-gold);
+  color: var(--button-text);
+}
+
+/* ---------- Main layout ---------- */
+.page-main {
+  flex: 1;
+  padding: 32px 16px 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+}
+
+.card {
+  width: 100%;
+  max-width: 800px;
+  background-color: var(--surface-color);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 4px 16px var(--shadow-color);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* ---------- Tables ---------- */
+.table-wrapper {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 480px;
+}
+
+thead th {
+  background-color: var(--table-header-bg);
+  color: var(--table-header-text);
+  text-align: left;
+  padding: 12px 14px;
+  font-weight: 600;
+  border-bottom: 2px solid var(--accent-gold);
+}
+
+.product-table tbody tr,
+.bill-table tbody tr {
+  background-color: var(--row-bg);
+}
+
+.product-table tbody tr:nth-child(even),
+.bill-table tbody tr:nth-child(even) {
+  background-color: var(--row-alt-bg);
+}
+
+td {
+  padding: 12px 14px;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.qty-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.qty-input {
+  width: 70px;
+  padding: 6px 8px;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  border: 1px solid var(--accent-silver);
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.qty-input:focus {
+  outline: none;
+  border-color: var(--accent-gold);
+  box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.3);
+}
+
+.qty-input.invalid {
+  border-color: var(--error-color);
+}
+
+.field-error {
+  color: var(--error-color);
+  font-size: 0.75rem;
+}
+
+/* ---------- Buttons ---------- */
+.button-row {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 24px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 12px 32px;
+  border-radius: 999px;
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease;
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--accent-gold), var(--accent-gold-dark));
+  color: var(--button-text);
+  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+}
+
+.btn-primary:hover {
+  box-shadow: 0 6px 16px rgba(212, 175, 55, 0.45);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--accent-silver);
+  border: 1px solid var(--accent-silver);
+}
+
+.btn-secondary:hover {
+  background-color: var(--accent-silver);
+  color: var(--button-text);
+}
+
+/* ---------- Form error ---------- */
+.form-error {
+  color: var(--error-color);
+  text-align: center;
+  margin-top: 16px;
+  font-weight: 600;
+}
+
+/* ---------- Bill / invoice ---------- */
+.bill-title {
+  margin-top: 0;
+  color: var(--accent-gold);
+  text-align: center;
+}
+
+.summary-box {
+  margin-top: 24px;
+  padding: 18px 20px;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  background-color: var(--bg-color);
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px dashed rgba(212, 175, 55, 0.25);
+}
+
+.summary-row:last-child {
+  border-bottom: none;
+}
+
+.summary-final {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--accent-gold);
+  border-top: 2px solid var(--accent-gold);
+  margin-top: 8px;
+  padding-top: 14px;
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+  text-align: center;
+  padding: 18px 16px;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  border-top: 1px solid var(--accent-gold);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 600px) {
+  .site-header {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .card {
+    padding: 16px;
+  }
+
+  .button-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btn {
+    width: 100%;
+  }
+}

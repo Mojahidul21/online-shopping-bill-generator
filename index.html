@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Online Shopping Bill Generator</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <h1 class="site-title">Online Shopping Bill Generator</h1>
+    <button id="themeToggle" class="theme-toggle" type="button" aria-label="Toggle light and dark theme">
+      <span id="themeIcon">☀</span>
+      <span id="themeLabel">Light</span>
+    </button>
+  </header>
+
+  <main class="page-main">
+
+    <section class="card">
+      <h2 class="bill-title">Shopping Cart</h2>
+      <div class="table-wrapper">
+        <table class="product-table">
+          <thead>
+            <tr>
+              <th>Product Name</th>
+              <th>Unit Price</th>
+              <th>Quantity</th>
+            </tr>
+          </thead>
+          <tbody id="productTableBody">
+            <!-- Rows injected by script.js from PRODUCTS data -->
+          </tbody>
+        </table>
+      </div>
+
+      <p id="formError" class="form-error" hidden></p>
+
+      <div class="button-row">
+        <button id="generateBtn" class="btn btn-primary" type="button">Generate Bill</button>
+        <button id="resetBtn" class="btn btn-secondary" type="button">Reset</button>
+      </div>
+    </section>
+
+    <section id="billSection" class="card bill-card" hidden>
+      <h2 class="bill-title">Invoice</h2>
+
+      <div class="table-wrapper">
+        <table class="bill-table">
+          <thead>
+            <tr>
+              <th>Product Name</th>
+              <th>Quantity</th>
+              <th>Unit Price</th>
+              <th>Subtotal</th>
+            </tr>
+          </thead>
+          <tbody id="billTableBody"></tbody>
+        </table>
+      </div>
+
+      <div class="summary-box">
+        <div class="summary-row">
+          <span>Total Amount</span>
+          <span id="sumTotal">৳0.00</span>
+        </div>
+        <div class="summary-row">
+          <span>Discount</span>
+          <span id="sumDiscount">৳0.00</span>
+        </div>
+        <div class="summary-row">
+          <span>Taxable Amount</span>
+          <span id="sumTaxable">৳0.00</span>
+        </div>
+        <div class="summary-row">
+          <span>VAT (15%)</span>
+          <span id="sumVat">৳0.00</span>
+        </div>
+        <div class="summary-row summary-final">
+          <span>Final Payable Amount</span>
+          <span id="sumFinal">৳0.00</span>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    Developed by: Mojahidul Alam (Student ID: 20-0-52-801-021)
+  </footer>
+
+  <script src="js/script.js" defer></script>
+</body>
+</html>
