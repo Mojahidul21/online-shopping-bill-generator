@@ -47,12 +47,12 @@ git clone https://github.com/Mojahidul21/online-shopping-bill-generator.git
 **Calculation logic:**
 
 ```
-Subtotal              = Unit Price × Quantity
-Total Amount           = Sum of all Subtotals
-Discount               = 10% of Total Amount, if Total Amount > Tk. 10,000
-Taxable Amount          = Total Amount − Discount
-VAT                    = 15% of Taxable Amount
-Final Payable Amount    = Taxable Amount + VAT
+Subtotal             = Unit Price × Quantity
+Total Amount         = Sum of all Subtotals
+Discount             = 10% of Total Amount, if Total Amount > Tk. 10,000
+Taxable Amount       = Total Amount − Discount
+VAT                  = 15% of Taxable Amount
+Final Payable Amount = Taxable Amount + VAT
 ```
 
 **Example:**
