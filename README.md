@@ -2,7 +2,7 @@
 
 A lightweight, single-page web app that generates itemized shopping bills with automatic discount and VAT calculation — built with plain HTML, CSS, and JavaScript. No frameworks, no build tools, no dependencies.
 
-**🔗 Live Demo:** _[https://mojahidul21.github.io/online-shopping-bill-generator/]_
+**🔗 Live Demo:** [https://mojahidul21.github.io/online-shopping-bill-generator/](https://mojahidul21.github.io/online-shopping-bill-generator/)
 
 ---
 
